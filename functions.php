@@ -337,7 +337,7 @@ add_action('elementor/query/filter_eu_posts', function ($query) {
 function my_custom_styles()
 {
 	// Register my custom stylesheet
-	wp_register_style('custom-styles', get_template_directory_uri() . '/deriv-style.css?v=1');
+	wp_register_style('custom-styles', get_template_directory_uri() . '/deriv-style.css?v=2');
 	// Load my custom stylesheet
 	wp_enqueue_style('custom-styles');
 }
@@ -348,9 +348,9 @@ add_action('wp_footer', 'my_custom_footer_scripts');
 
 function my_custom_footer_scripts()
 {
-	$is_eu = is_user_from_eu()[0];
-	$u_c = is_user_from_eu()[1];
-	$u_ip = is_user_from_eu()[2];
+	$is_eu = false;
+	// $u_c = is_user_from_eu()[1];
+	// $u_ip = is_user_from_eu()[2];
 	$base_url = $is_eu ? 'https://eu.deriv.com' : 'https://deriv.com';
 	$social_media_links = [
 		'facebook' => $is_eu ? 'https://www.facebook.com/derivEU' : 'https://www.facebook.com/derivdotcom',
@@ -360,18 +360,11 @@ function my_custom_footer_scripts()
 		'linkedin' => 'https://www.linkedin.com/company/derivdotcom/',
 		'telegram' => 'https://t.me/derivdotcomofficial',
 	];
-
-
-	echo "<h1 id='dddd' style='display:none'> ";
-	$ip = get_user_ip();
-	var_dump(file_get_contents("https://google.com"));
-
-	echo "</h1>";
 	echo "
 	<footer>
 	<div class='footer--brand'>
 		<div class='footer--logo'>
-			<img src='https://blog.deriv.com/wp-content/uploads/2023/04/logo.svg' alt='logo'>
+			<img src='https://blog.deriv.com/wp-content/uploads/2023/04/deriv-new-logo.svg' alt='logo'>
 		</div>
 		<div class='social-media'>
 			<a href='" . $social_media_links["facebook"] . "'><img id='fb-icon' src='https://blog.deriv.com/wp-content/uploads/2023/04/facebook.svg' alt='facebook'></a>
