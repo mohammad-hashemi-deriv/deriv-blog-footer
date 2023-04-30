@@ -1,15 +1,13 @@
-body {
-  font-family: 'Ubuntu';
-}
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap');
+* {
+  font-family: 'Ubuntu' !important;
+}
 footer {
   max-width: 1520px;
   width: auto;
   margin: auto;
-  /* position: absolute;
-   bottom: 0;
-   left: 0;
-   right: 0; */
+  font-family: 'Ubuntu';
 }
 
 .wrapper {
@@ -122,6 +120,7 @@ footer {
   font-size: 14px;
   line-height: 30px;
   padding: 0 16px;
+  font-family: 'IBM Plex Sans', 'Ubuntu';
 }
 
 .license a {
