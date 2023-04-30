@@ -337,7 +337,7 @@ add_action('elementor/query/filter_eu_posts', function ($query) {
 function my_custom_styles()
 {
 	// Register my custom stylesheet
-	wp_register_style('custom-styles', get_template_directory_uri() . '/deriv-style.css?v=2');
+	wp_register_style('custom-styles', get_template_directory_uri() . '/deriv-style.css?v=17');
 	// Load my custom stylesheet
 	wp_enqueue_style('custom-styles');
 }

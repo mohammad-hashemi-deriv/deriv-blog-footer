@@ -120,7 +120,7 @@ footer {
   font-size: 14px;
   line-height: 30px;
   padding: 0 16px;
-  font-family: 'IBM Plex Sans', 'Ubuntu';
+  font-family: 'IBM Plex Sans', 'Ubuntu' !important;
 }
 
 .license a {
@@ -143,6 +143,10 @@ footer {
   margin: auto 16px;
   margin-bottom: 25px;
   margin-top: 24px;
+}
+
+.risk-warning p {
+  font-family: 'IBM Plex Sans', 'Ubuntu' !important;
 }
 
 .risk-warning p a {
