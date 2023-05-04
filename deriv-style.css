@@ -1,11 +1,11 @@
-
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap");
 
 footer {
-  max-width: 1520px;
+  max-width: 1232px;
   width: auto;
   margin: auto;
-  font-family: 'Ubuntu';
+  font-family: "Ubuntu";
+  opacity: 0.8;
 }
 
 .wrapper {
@@ -54,6 +54,7 @@ footer {
 .footer--menu {
   display: flex;
   gap: 10px;
+  padding-bottom: 16px;
 }
 
 .footer--menu--col {
@@ -62,12 +63,13 @@ footer {
   display: flex;
   flex-direction: column;
   flex: 1;
+  font-family: "Ubuntu";
 }
 
 .footer--menu--col h3 {
   color: #414652;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .footer--menu--col a {
@@ -77,11 +79,11 @@ footer {
 .footer--menu--col a li {
   color: #414652;
   padding: 12px 0;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 14px;
   position: relative;
   transition: color 0.5s;
-  font-family: 'Ubuntu';
+  font-family: "Ubuntu";
 }
 
 /* .footer--menu--col a li::after{
@@ -98,7 +100,7 @@ footer {
 
 .footer--menu--col a li:hover,
 .footer--menu--col a li.active {
-  color: #FF444F;
+  color: #ff444f;
 }
 
 /* .footer--menu--col a li:hover::after{
@@ -115,16 +117,16 @@ footer {
 
 .license {
   color: #414652;
-  font-weight: 300;
-  font-size: 14px;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 30px;
   padding: 0 16px;
-  font-family: 'IBM Plex Sans', 'Ubuntu' !important;
+  font-family: "IBM Plex Sans", "Ubuntu" !important;
 }
 
 .license a {
   color: #414652;
-  font-weight: 500;
+  font-weight: 700;
   text-decoration: none;
 }
 
@@ -132,11 +134,10 @@ footer {
   text-decoration: underline;
 }
 
-
 .risk-warning {
   background: rgba(65, 70, 82, 0.2);
   color: #414652;
-  opacity: 0.8;
+  opacity: 1;
   border-radius: 16px;
   padding: 16px;
   margin: auto 16px;
@@ -145,7 +146,7 @@ footer {
 }
 
 .risk-warning p {
-  font-family: 'IBM Plex Sans', 'Ubuntu' !important;
+  font-family: "IBM Plex Sans", "Ubuntu" !important;
 }
 
 .risk-warning p a {
@@ -161,16 +162,17 @@ footer {
 .eu-disclaimer {
   background-color: white;
   position: fixed;
+  width: 100%;
   padding: 15px;
   bottom: 0;
-  height: 100px;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
   border-top: 1px solid #cfcdcd;
+  z-index: 100;
 }
 
+.eu-disclaimer p {
+  max-width: 1232px;
+  margin: auto;
+}
 
 @media screen and (max-width: 999px) {
   .footer--menu {

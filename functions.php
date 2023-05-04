@@ -94,6 +94,7 @@ if (!function_exists('hello_elementor_setup')) {
 		}
 	}
 }
+
 add_action('after_setup_theme', 'hello_elementor_setup');
 
 function hello_maybe_update_theme_version_in_db()
@@ -337,7 +338,7 @@ add_action('elementor/query/filter_eu_posts', function ($query) {
 function my_custom_styles()
 {
 	// Register my custom stylesheet
-	wp_register_style('custom-styles', get_template_directory_uri() . '/deriv-style.css?v=18');
+	wp_register_style('custom-styles', get_template_directory_uri() . '/deriv-style.css?v=40');
 	// Load my custom stylesheet
 	wp_enqueue_style('custom-styles');
 }
@@ -372,7 +373,7 @@ function my_custom_footer_scripts()
 			<a href='" . $social_media_links["twitter"] . "'><img src='https://blog.deriv.com/wp-content/uploads/2023/04/twitter.svg' alt='twitter'></a>
 			<a href='" . $social_media_links["youtube"] . "'><img src='https://blog.deriv.com/wp-content/uploads/2023/04/youtube.svg' alt='youtube'></a>
 			<a href='" . $social_media_links["linkedin"] . "'><img src='https://blog.deriv.com/wp-content/uploads/2023/04/linkedin.svg' alt='linkedin'></a>";
-	if (!$is_eu) echo "<a href='" . $social_media_links["telegram"] . "'><img src='https://blog.deriv.com/wp-content/uploads/2023/04/telegram.svg' alt='telegram'></a>";
+	if (!$is_eu) echo "<a class='row_content' href='" . $social_media_links["telegram"] . "'><img src='https://blog.deriv.com/wp-content/uploads/2023/04/telegram.svg' alt='telegram'></a>";
 	echo "</div>
 	</div>
 	<div class='footer--menu'>
@@ -413,7 +414,7 @@ function my_custom_footer_scripts()
 			</a>";
 	if (!$is_eu)
 		echo "
-				<a href='$base_url/trade-types/options/'>
+				<a class='row_content' href='$base_url/trade-types/options/'>
 					<li>Digital options</li>
 				</a>
 			";
@@ -447,11 +448,10 @@ function my_custom_footer_scripts()
 			</a>";
 
 	if (!$is_eu)
-
-		echo "<a href='$base_url/derivx/'>
+		echo "<a class='row_content' href='$base_url/derivx/'>
 				<li>Deriv X</li>
 			</a>
-			<a href='$base_url/deriv-go/'>
+			<a class='row_content' href='$base_url/deriv-go/'>
 				<li>Deriv GO</li>
 			</a>";
 
@@ -459,13 +459,13 @@ function my_custom_footer_scripts()
 				<li>DTrader</li>
 			</a>";
 	if (!$is_eu)
-		echo "<a href='https://smarttrader.deriv.com/'>
+		echo "<a class='row_content' href='https://smarttrader.deriv.com/'>
 				<li>SmartTrader</li>
 			</a>
-			<a href='$base_url/dbot/'>
+			<a class='row_content' href='$base_url/dbot/'>
 				<li>DBot</li>
 			</a>
-			<a href='https://bot.deriv.com/'>
+			<a class='row_content' href='https://bot.deriv.com/'>
 				<li>Binary Bot</li>
 			</a>";
 	echo "</ul>
@@ -487,7 +487,7 @@ function my_custom_footer_scripts()
 				<li>Affiliates and IBs</li>
 			</a>";
 	if (!$is_eu)
-		echo "<a href='$base_url/partners/payment-agent/'>
+		echo "<a class='row_content' href='$base_url/partners/payment-agent/'>
 				<li>Payment agents</li>
 			</a>";
 
@@ -519,9 +519,7 @@ function my_custom_footer_scripts()
 
 
 	</div>
-	<div class='licenses'>";
-	if (!$is_eu) {
-		echo "
+	<div class='licenses'>
 			<p class='license'>
 				Deriv Investments (Europe) Limited is licensed and regulated by the Malta Financial Services Authority,
 				Triq L-Imdina, Zone 1, Central Business District, Birkirkara CBD 1010, Malta,
@@ -529,55 +527,26 @@ function my_custom_footer_scripts()
 				The registered office of Deriv Investments (Europe) Limited is at W Business Centre,
 				Level 3, Triq Dun Karm, Birkirkara BKR9033, Malta.
 			</p>
-			<p class='license'>
+			<p class='license row_content'>
 				Deriv (FX) Ltd is licensed by Labuan Financial Services Authority <a href='$base_url/regulatory/Deriv_(FX)_Ltd.pdf'>(licence)</a>.
 				The registered office of Deriv (FX) Ltd is at  F16, Level 1, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia.
 			</p>
-			<p class='license'>
+			<p class='license row_content'>
 				Deriv (BVI) Ltd is licensed by the British Virgin Islands Financial Services Commission <a href='$base_url/regulatory/Deriv_(BVI)_Ltd.pdf'>(licence)</a>.
 				The registered office of Deriv (BVI) is at Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands.
 			</p>
-			<p class='license'>
+			<p class='license row_content'>
 				Deriv (V) Ltd is licensed and regulated by the Vanuatu Financial Services Commission <a href='$base_url/regulatory/Deriv_(V)_Ltd.pdf'>(licence)</a>.
 				The registered office of Deriv (V) Ltd is at 1276 Kumul Highway, Port Vila, Vanuatu.
 			</p>
-			<p class='license'>
+			<p class='license row_content'>
 				Deriv (SVG) LLC has a registered office at Hinds Buildings, Kingstown, St. Vincent and the Grenadines.
 			</p>
 			<p class='license'>
 			Deriv Holdings (Guernsey) Limited is the holding company for the above subsidiaries with the registration number 71479 and the registered address of 2nd Floor, 1 Cornet Street, St Peter Port, Guernsey, GY1 1BZ.
 			</p>
-			<p class='license'>
-				This website's services are not available in certain countries, including the USA, Canada, and Hong Kong, or to persons below 18.
-			</p>
-			<p class='license'>
-				The information contained in the Blog is for educational purposes only and is not intended as financial or investment advice.
-			</p>
-		";
-	} else {
-		echo "
-			<p class='license'>
-				Deriv Investments (Europe) Limited is licensed and regulated by
-				the Malta Financial Services Authority under the Investment Services Act <a href='$base_url/regulatory/Deriv_Investments_(Europe)_Limited.pdf'>(licence)</a>.
-				The registered office of Deriv Investments (Europe) Limited is at W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR9033, Malta.
-			</p>
-			<p class='license'>
-				Deriv Holdings (Guernsey) Limited — 2nd Floor, 1 Cornet Street,
-				St Peter Port, Guernsey, GY1 1BZ — is the holding company for the above subsidiary.
-			</p>
-			<p class='license'>
-				This website's services are not available in certain countries, including the USA, Canada, and Hong Kong, or to persons below 18.
-			</p>
-			<p class='license'>
-				The information contained in the Blog is for educational purposes only and is not intended as financial or investment advice.
-			</p>
-		";
-	}
-	echo "
 	</div>
-	<div class='risk-warning' ";
-	if ($is_eu) echo " style='margin-bottom:120px' >";
-	else echo ">";
+	<div class='risk-warning' style='margin-bottom:120px' >";
 	echo "<p>
 			Please remember that CFDs and other products offered on this website are complex derivatives and may not be suitable for all clients.
 			Trading in these products carries a substantial risk of losing money rapidly.
@@ -591,15 +560,14 @@ function my_custom_footer_scripts()
 			website does not constitute investment advice.
 		</p>
 	</div>";
-	if ($is_eu)
-		echo "<div class='eu-disclaimer'>
-		CFDs are complex instruments with a high risk of losing money rapidly due to leverage.
-		71% of retail investor accounts lose money when trading CFDs with this provider.
-		You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.
-	</div>";
-
 	echo "</footer>
 	";
+		echo "<div class='eu-disclaimer eu_content'>
+		<p>
+		CFDs are complex instruments with a high risk of losing money rapidly due to leverage. <b>73% of retail investor accounts lose money when trading CFDs with this provider.</b> You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.
+		</p>
+	</div>";
+
 }
 
 
